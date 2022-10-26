@@ -19,6 +19,16 @@ const routes: Routes = [
     path: 'tarefas',
     loadChildren: () => import('./tarefas/tarefa.module')
       .then(m => m.TarefaModule)
+  },
+  {
+    path: 'contatos',
+    loadChildren: () => import('./contatos/contato.module')
+      .then(m => m.ContatoModule)
+  },
+  {
+    path: 'compromissos',
+    loadChildren: () => import('./compromissos/compromisso.module')
+      .then(m => m.CompromissoModule)
   }
 ];
 

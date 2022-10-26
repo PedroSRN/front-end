@@ -7,16 +7,16 @@
       <!-- Titulo -->
       <div class="text-md-start">
         <h1 class="fw-bold text-success">
-          Listar Tarefas
+          Listar Compromisso
         </h1>
         <hr />
       </div>
 
       <!-- Barra de Ações -->
       <div class="g-grid d-flex gap-1 mt-5">
-        <a [routerLink]="['/tarefas/inserir']" role="button" class="btn btn-success me-md-1 col-md-2">
+        <a [routerLink]="['/compromissos/inserir']" role="button" class="btn btn-success me-md-1 col-md-2">
           <i class="pi pi-plus-circle me-2"></i>
-          Nova Tarefa
+          Novo Compromisso
         </a>
       </div>
 
@@ -25,24 +25,28 @@
         <table class="table table-light table-striped table-hover table-borderless">
           <thead class="thead-dark text-center">
             <tr>
-              <th>Título</th>
-              <th>Prioridade</th>
-              <th>Situação</th>
+              <th>Assunto</th>
+              <th>Data</th>
+              <th>Hora Início</th>
+              <th>Hora Término</th>
+              <th>Nome do Contato</th>
               <th>Ações</th>
             </tr>
           </thead>
           <tbody class="text-center">
-            <tr *ngFor="let t of (tarefas$ | async)">
-              <td>{{t.titulo}}</td>
-              <td>{{t.prioridade}}</td>
-              <td>{{t.situacao}}</td>
+            <tr *ngFor="let c of (compromissos$ | async)">
+              <td>{{c.assunto}}</td>
+              <td>{{c.data}}</td>
+              <td>{{c.horaInicio}}</td>
+              <td>{{c.horaTermino}}</td>
+              <td>{{c.nomeContato}}</td>
 
               <td class="d-grid d-md-block">
-                <button [routerLink]="['/tarefas/editar', t.id]" type="button"
+                <button [routerLink]="['/compromissos/editar', c.id]" type="button"
                   class="btn btn-sm btn-warning me-0 me-md-1 mb-1 mb-md-auto">
                   <i class="bi bi-pencil"></i>
                 </button>
-                <button [routerLink]="['/tarefas/excluir', t.id]" type="button"
+                <button [routerLink]="['/compromissos/excluir', c.id]" type="button"
                   class="btn btn-sm btn-outline-danger me-0 me-md-1 mb-1 mb-md-auto">
                   <i class="bi bi-trash"></i>
                 </button>
@@ -56,3 +60,4 @@
     </div>
   </div>
 </div>
+

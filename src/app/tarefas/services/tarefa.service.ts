@@ -84,6 +84,7 @@ export class TarefaService {
   }
 
   private processarFalha(resposta: any) {
+    console.log(resposta);
     return throwError(() => new Error(resposta.error.erros[0]));
   }
 }

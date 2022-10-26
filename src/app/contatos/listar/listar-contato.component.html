@@ -7,16 +7,16 @@
       <!-- Titulo -->
       <div class="text-md-start">
         <h1 class="fw-bold text-success">
-          Listar Tarefas
+          Listar Contatos
         </h1>
         <hr />
       </div>
 
       <!-- Barra de Ações -->
       <div class="g-grid d-flex gap-1 mt-5">
-        <a [routerLink]="['/tarefas/inserir']" role="button" class="btn btn-success me-md-1 col-md-2">
+        <a [routerLink]="['/contatos/inserir']" role="button" class="btn btn-success me-md-1 col-md-2">
           <i class="pi pi-plus-circle me-2"></i>
-          Nova Tarefa
+          Novo Contato
         </a>
       </div>
 
@@ -25,24 +25,24 @@
         <table class="table table-light table-striped table-hover table-borderless">
           <thead class="thead-dark text-center">
             <tr>
-              <th>Título</th>
-              <th>Prioridade</th>
-              <th>Situação</th>
+              <th>Nome</th>
+              <th>Telefone</th>
+              <th>Cargo</th>
               <th>Ações</th>
             </tr>
           </thead>
           <tbody class="text-center">
-            <tr *ngFor="let t of (tarefas$ | async)">
-              <td>{{t.titulo}}</td>
-              <td>{{t.prioridade}}</td>
-              <td>{{t.situacao}}</td>
+            <tr *ngFor="let c of (contatos$ | async)">
+              <td>{{c.nome}}</td>
+              <td>{{c.telefone}}</td>
+              <td>{{c.cargo}}</td>
 
               <td class="d-grid d-md-block">
-                <button [routerLink]="['/tarefas/editar', t.id]" type="button"
+                <button [routerLink]="['/contatos/editar', c.id]" type="button"
                   class="btn btn-sm btn-warning me-0 me-md-1 mb-1 mb-md-auto">
                   <i class="bi bi-pencil"></i>
                 </button>
-                <button [routerLink]="['/tarefas/excluir', t.id]" type="button"
+                <button [routerLink]="['/contatos/excluir', c.id]" type="button"
                   class="btn btn-sm btn-outline-danger me-0 me-md-1 mb-1 mb-md-auto">
                   <i class="bi bi-trash"></i>
                 </button>
@@ -56,3 +56,4 @@
     </div>
   </div>
 </div>
+

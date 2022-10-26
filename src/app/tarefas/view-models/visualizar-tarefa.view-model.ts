@@ -1,4 +1,4 @@
-export class VisualizarTarefaViewModel{
+export class VisualizarTarefaViewModel {
   id: string;
   titulo: string;
   prioridade: string;

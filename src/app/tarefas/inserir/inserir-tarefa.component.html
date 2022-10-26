@@ -30,7 +30,9 @@
           <label class="form-label">Prioridade:</label>
           <ng-select
             [ngClass]="prioridade?.touched && prioridade?.invalid ? 'is-invalid' : ''"
-            formControlName="prioridade" [clearable]="false" [searchable]="false">
+            formControlName="prioridade"
+            [clearable]="false"
+            [searchable]="false">
             <ng-option *ngFor="let prioridade of prioridades ; index as i" [value]="i" >
                 {{prioridade}}
             </ng-option>
