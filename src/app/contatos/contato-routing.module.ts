@@ -16,7 +16,7 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'listar', pathMatch: 'full' },
       { path: 'listar', component: ListarContatoComponent },
-      { path: 'inserir', component: InserirContatoComponent},
+      { path: 'inserir', component: InserirContatoComponent },
       {
         path: 'editar/:id',
         component: EditarContatoComponent,
